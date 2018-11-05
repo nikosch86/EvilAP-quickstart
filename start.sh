@@ -7,6 +7,11 @@ CIDR="${THREE_OCTETS}.0/${NETWORK}"
 GATEWAY="${THREE_OCTETS}.1"
 BROADCAST="${THREE_OCTETS}.255"
 
+echo "checking for required software"
+for REQRD in hostapd dnsmasq; do
+  command -v ${REQRD} >/dev/null 2>&1 || { echo >&2 "I require ${REQRD} but it's not installed.  Aborting."; exit 1; }
+done
+
 echo "preparing interface ${INTERFACE}"
 iw dev ${INTERFACE} set power_save off
 ip link set down dev ${INTERFACE}
