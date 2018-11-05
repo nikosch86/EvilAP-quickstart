@@ -1,0 +1,5 @@
+interface=__WIFI_INTERFACE__
+dhcp-range=__THREE_OCTETS__.10,__THREE_OCTETS__.250,12h
+dhcp-option=3,__GATEWAY__
+dhcp-option=6,__GATEWAY__
+log-queries

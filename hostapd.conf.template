@@ -1,0 +1,4 @@
+interface=__WIFI_INTERFACE__
+ssid=DoNotConnectToTheEvilAP
+channel=6
+hw_mode=g
